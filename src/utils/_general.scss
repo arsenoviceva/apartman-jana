@@ -1,0 +1,12 @@
+@import "./components/header";
+@import "./components/home";
+@import "./components/variables";
+@import "./components/typography";
+@import "./components/footer";
+@import "./components/gallery";
+@import "./components/contact";
+@import "./components/cookie";
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}

@@ -1,0 +1,70 @@
+// .mobile-gallery {
+//   background: linear-gradient(
+//     90deg,
+//     #f2e7fe 0%,
+//     #f2e7fe 6.25%,
+//     #f1e7fe 12.5%,
+//     #f1e7fe 18.75%,
+//     #f0e7fe 25%,
+//     #efe7fe 31.25%,
+//     #ede6fe 37.5%,
+//     #ece6fe 43.75%,
+//     #eae6fe 50%,
+//     #e8e5fe 56.25%,
+//     #e5e5fe 62.5%,
+//     #e2e5fe 68.75%,
+//     #dfe4ff 75%,
+//     #dce4ff 81.25%,
+//     #d9e3ff 87.5%,
+//     #d5e3ff 93.75%,
+//     #d1e2ff 100%
+//   );
+// }
+// @media (min-width: 578px) {
+//   .mobile-gallery {
+//     display: none;
+//   }
+// }
+// @media (max-width: 577px) {
+//   .desktop-gallery {
+//     display: none;
+//   }
+// }
+.room-title {
+  font-family: "Inter";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 29.05px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  &.white {
+    color: white;
+  }
+}
+
+.rooms-div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 5rem 0 5rem 1rem;
+}
+@media (max-width: 575px) {
+  .rooms-div {
+    display: none;
+  }
+}
+.room-descr {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  padding-right: 1rem;
+  &.white {
+    color: white;
+  }
+}

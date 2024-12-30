@@ -1,0 +1,65 @@
+.header-container {
+  margin-top: -5px;
+}
+.nav-link {
+  color: rgba(142, 89, 101, 1) !important;
+  font-family: "Inter", sans-serif;
+  padding: 1rem 0 1rem 0;
+}
+.navbar {
+  border-bottom: 1px solid rgba(142, 89, 101, 1);
+}
+.custom-toggler {
+  box-shadow: none;
+}
+.custom-toggler .navbar-toggler-icon {
+  color: rgba(142, 89, 101, 1) !important;
+  fill: rgba(142, 89, 101, 1);
+  background-image: url("../../../public/images/menu.svg");
+}
+.navbar {
+  --bs-navbar-padding-x: 0;
+  --bs-navbar-padding-y: 0.5rem;
+  --bs-navbar-color: rgba(142, 89, 101, 1) !important;
+  --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+  --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+  --bs-navbar-active-color: rgba(142, 89, 101, 1) !important;
+  --bs-navbar-toggler-focus-width: 0.25rem;
+  --bs-navbar-toggler-border-color: rgba(142, 89, 101, 1) !important;
+}
+.offcanvas {
+}
+.offcanvas.offcanvas-end {
+  width: 50% !important;
+}
+@media (max-width: 991px) {
+  .offcanvas {
+    background: linear-gradient(
+      90deg,
+      #f2e7fe 0%,
+      #f2e7fe 6.25%,
+      #f1e7fe 12.5%,
+      #f1e7fe 18.75%,
+      #f0e7fe 25%,
+      #efe7fe 31.25%,
+      #ede6fe 37.5%,
+      #ece6fe 43.75%,
+      #eae6fe 50%,
+      #e8e5fe 56.25%,
+      #e5e5fe 62.5%,
+      #e2e5fe 68.75%,
+      #dfe4ff 75%,
+      #dce4ff 81.25%,
+      #d9e3ff 87.5%,
+      #d5e3ff 93.75%,
+      #d1e2ff 100%
+    );
+  }
+  .nav-link {
+    text-transform: uppercase;
+    font-size: 3rem;
+  }
+  .navbar-nav {
+    margin-top: 3rem;
+  }
+}
