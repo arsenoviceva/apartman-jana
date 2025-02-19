@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import { useNavigate } from "react-router";
-import Navbar from "react-bootstrap/Navbar";
 import { useState } from "react";
+import Navbar from "react-bootstrap/Navbar";
 import { Row, Col, Container, Offcanvas } from "react-bootstrap";
 
 export const Header = () => {
@@ -18,10 +18,35 @@ export const Header = () => {
           <Navbar.Brand href="/">
             <img src="/images/janalogo.png" alt="Brand Logo" />
           </Navbar.Brand>
+          {/* <Nav className="justify-content-end flex-grow-1 pe-3 d-none d-lg-flex">
+            <Nav.Link
+              onClick={() => onClickHandler("/")}
+              className="nav-link d-flex justify-content-end fs-5"
+            >
+              Početna
+            </Nav.Link>
+            <Nav.Link
+              // href="/gallery"
+              onClick={() => onClickHandler("/gallery")}
+              className="nav-link  d-flex justify-content-end fs-5"
+            >
+              Galerija
+            </Nav.Link>
+
+            <Nav.Link
+              // href="/contact"
+              onClick={() => onClickHandler("/contact")}
+              className="nav-link  d-flex justify-content-end fs-5"
+            >
+              Kontakt
+            </Nav.Link>
+          </Nav> */}
+
           <Navbar.Toggle
             className="custom-toggler"
             aria-controls="offcanvasNavbar"
           />
+
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
@@ -35,22 +60,24 @@ export const Header = () => {
               ></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Nav className="justify-content-end flex-grow-1 pe-3  ">
                 <Nav.Link
-                  href="/"
+                  onClick={() => onClickHandler("/")}
                   className="nav-link d-flex justify-content-end fs-5"
                 >
                   Početna
                 </Nav.Link>
                 <Nav.Link
-                  href="/gallery"
+                  // href="/gallery"
+                  onClick={() => onClickHandler("/gallery")}
                   className="nav-link  d-flex justify-content-end fs-5"
                 >
                   Galerija
                 </Nav.Link>
 
                 <Nav.Link
-                  href="/contact"
+                  // href="/contact"
+                  onClick={() => onClickHandler("/contact")}
                   className="nav-link  d-flex justify-content-end fs-5"
                 >
                   Kontakt
