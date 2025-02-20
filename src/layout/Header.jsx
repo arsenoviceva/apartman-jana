@@ -7,51 +7,37 @@ import { Row, Col, Container, Offcanvas } from "react-bootstrap";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const onClickHandler = (path) => {
     navigate(path);
+    handleClose(); // Close offcanvas after navigation
   };
 
   return (
     <Container>
-      <Navbar bg="transparent" variant="dark" expand="lg" className="  mb-3">
+      <Navbar bg="transparent" variant="dark" expand="lg" className="mb-3">
         <Container fluid className="header-container">
           <Navbar.Brand href="/">
             <img src="/images/janalogo.png" alt="Brand Logo" />
           </Navbar.Brand>
-          {/* <Nav className="justify-content-end flex-grow-1 pe-3 d-none d-lg-flex">
-            <Nav.Link
-              onClick={() => onClickHandler("/")}
-              className="nav-link d-flex justify-content-end fs-5"
-            >
-              Početna
-            </Nav.Link>
-            <Nav.Link
-              // href="/gallery"
-              onClick={() => onClickHandler("/gallery")}
-              className="nav-link  d-flex justify-content-end fs-5"
-            >
-              Galerija
-            </Nav.Link>
-
-            <Nav.Link
-              // href="/contact"
-              onClick={() => onClickHandler("/contact")}
-              className="nav-link  d-flex justify-content-end fs-5"
-            >
-              Kontakt
-            </Nav.Link>
-          </Nav> */}
 
           <Navbar.Toggle
             className="custom-toggler"
             aria-controls="offcanvasNavbar"
+            onClick={handleShow} // Open offcanvas
           />
 
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             placement="end"
-            className="  custom-toggler"
+            className="custom-toggler"
+            show={show} // Control visibility
+            onHide={handleClose} // Close on clicking outside or close button
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title
@@ -60,7 +46,7 @@ export const Header = () => {
               ></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3  ">
+              <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link
                   onClick={() => onClickHandler("/")}
                   className="nav-link d-flex justify-content-end fs-5"
@@ -68,17 +54,14 @@ export const Header = () => {
                   Početna
                 </Nav.Link>
                 <Nav.Link
-                  // href="/gallery"
                   onClick={() => onClickHandler("/gallery")}
-                  className="nav-link  d-flex justify-content-end fs-5"
+                  className="nav-link d-flex justify-content-end fs-5"
                 >
                   Galerija
                 </Nav.Link>
-
                 <Nav.Link
-                  // href="/contact"
                   onClick={() => onClickHandler("/contact")}
-                  className="nav-link  d-flex justify-content-end fs-5"
+                  className="nav-link d-flex justify-content-end fs-5"
                 >
                   Kontakt
                 </Nav.Link>
@@ -88,67 +71,69 @@ export const Header = () => {
         </Container>
       </Navbar>
     </Container>
-    // <div className="header-container px-3 ">
-    //   <nav className="navbar navbar-expand-lg ">
-    //     <div className="container border-1 ">
-    //       <a className="navbar-brand" href="/">
-    //         <img src="/images/janalogo.png" alt="Brand Logo" />
-    //       </a>
+  );
+};
+// <div className="header-container px-3 ">
+//   <nav className="navbar navbar-expand-lg ">
+//     <div className="container border-1 ">
+//       <a className="navbar-brand" href="/">
+//         <img src="/images/janalogo.png" alt="Brand Logo" />
+//       </a>
 
-    //       <button
-    //         className="navbar-toggler custom-toggler"
-    //         type="button"
-    //         data-bs-toggle="collapse"
-    //         data-bs-target="#navbarNav"
-    //         aria-controls="navbarNav"
-    //         aria-expanded="false"
-    //         aria-label="Toggle navigation"
-    //       >
-    //         <span className="navbar-toggler-icon"></span>
-    //       </button>
+//       <button
+//         className="navbar-toggler custom-toggler"
+//         type="button"
+//         data-bs-toggle="collapse"
+//         data-bs-target="#navbarNav"
+//         aria-controls="navbarNav"
+//         aria-expanded="false"
+//         aria-label="Toggle navigation"
+//       >
+//         <span className="navbar-toggler-icon"></span>
+//       </button>
 
-    //       <div className="collapse navbar-collapse" id="navbarNav">
-    //         <ul className="navbar-nav ms-auto gap-5r">
-    //           <li className="nav-item">
-    //             <Nav.Link
-    //               className="nav-link"
-    //               onClick={() => onClickHandler("/")}
-    //             >
-    //               Početna
-    //             </Nav.Link>
-    //           </li>
-    //           <li className="nav-item">
-    //             <Nav.Link
-    //               className="nav-link"
-    //               onClick={() => onClickHandler("/gallery")}
-    //             >
-    //               Galerija
-    //             </Nav.Link>
-    //           </li>
-    //           <li className="nav-item">
-    //             <Nav.Link
-    //               className="nav-link"
-    //               onClick={() => onClickHandler("/contact")}
-    //             >
-    //               Kontakt
-    //             </Nav.Link>
-    //           </li>
-    //           <li className=" align-items-center d-none d-lg-flex">
-    //             <Nav.Link
-    //               href="https://www.instagram.com/apartman_jana_bijeljina/"
-    //               target="_blank"
-    //               className="text-decoration-none text-black "
-    //             >
-    //               <img
-    //                 src="/images/Instagram.png"
-    //                 className="cursor-pointer "
-    //               />
-    //             </Nav.Link>
-    //           </li>
-    //         </ul>
-    //       </div>
+//       <div className="collapse navbar-collapse" id="navbarNav">
+//         <ul className="navbar-nav ms-auto gap-5r">
+//           <li className="nav-item">
+//             <Nav.Link
+//               className="nav-link"
+//               onClick={() => onClickHandler("/")}
+//             >
+//               Početna
+//             </Nav.Link>
+//           </li>
+//           <li className="nav-item">
+//             <Nav.Link
+//               className="nav-link"
+//               onClick={() => onClickHandler("/gallery")}
+//             >
+//               Galerija
+//             </Nav.Link>
+//           </li>
+//           <li className="nav-item">
+//             <Nav.Link
+//               className="nav-link"
+//               onClick={() => onClickHandler("/contact")}
+//             >
+//               Kontakt
+//             </Nav.Link>
+//           </li>
+//           <li className=" align-items-center d-none d-lg-flex">
+//             <Nav.Link
+//               href="https://www.instagram.com/apartman_jana_bijeljina/"
+//               target="_blank"
+//               className="text-decoration-none text-black "
+//             >
+//               <img
+//                 src="/images/Instagram.png"
+//                 className="cursor-pointer "
+//               />
+//             </Nav.Link>
+//           </li>
+//         </ul>
+//       </div>
 
-    /* // <div className="collapse navbar-collapse" id="navbarNav">
+/* // <div className="collapse navbar-collapse" id="navbarNav">
           //   <ul className="navbar-nav ms-auto gap-5r">
           //     <li className="nav-item">
           //       <Nav.Link
@@ -188,8 +173,6 @@ export const Header = () => {
           //     </li>
           //   </ul>
           // </div> */
-    //     </div>
-    //   </nav>
-    // </div>
-  );
-};
+//     </div>
+//   </nav>
+// </div>
